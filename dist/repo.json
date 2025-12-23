@@ -1,0 +1,25 @@
+[
+  {
+    "Author": "Asteria Nocturna",
+    "Name": "Divination.AetheryteLinkInChat",
+    "InternalName": "AetheryteLinkInChat",
+    "AssemblyVersion": "7.4.0.1",
+    "Description": "Display a teleport link to the nearest aetherite for the map link from the in-game chat. Type /alic to configure the plugin.",
+    "Punchline": "Quick teleport for mob hunts and treasure hunts!",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 14,
+    "Tags": ["teleporter"],
+    "CategoryTags": ["utility"],
+    "RepoUrl": "https://github.com/TonyCutHair/DivinationCN",
+    "DownloadLinkInstall": "https://github.com/TonyCutHair/DivinationCN/releases/download/v7.4.0.1/AetheryteLinkInChat-Release.zip",
+    "DownloadLinkUpdate": "https://github.com/TonyCutHair/DivinationCN/releases/download/v7.4.0.1/AetheryteLinkInChat-Release.zip",
+    "DownloadLinkTesting": "https://github.com/TonyCutHair/DivinationCN/releases/download/v7.4.0.1/AetheryteLinkInChat-Release.zip",
+    "LastUpdate": 0,
+    "DownloadCount": 0,
+    "IsHide": false,
+    "LoadPriority": 0,
+    "IconUrl": null,
+    "ImageUrls": [],
+    "Changelog": "Release 7.4.0.1 with Simplified Chinese UI and Dalamud API 14"
+  }
+]

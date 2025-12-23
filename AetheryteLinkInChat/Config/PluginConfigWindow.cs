@@ -59,7 +59,7 @@ public class PluginConfigWindow : ConfigWindow<PluginConfig>
 
     private void DrawGeneralTab()
     {
-        if (ImGui.BeginTabItem("General"))
+        if (ImGui.BeginTabItem(new(Localization.GeneralTab)))
         {
             ImGui.Checkbox(new(Localization.AllowTeleportQueueing), ref Config.AllowTeleportQueueing);
             if (Config.AllowTeleportQueueing)
@@ -111,14 +111,14 @@ public class PluginConfigWindow : ConfigWindow<PluginConfig>
 
     private void DrawAetheryteListTab()
     {
-        if (ImGui.BeginTabItem("Aetheryte List"))
+        if (ImGui.BeginTabItem(new(Localization.AetheryteListTab)))
         {
             ImGui.Text(new(Localization.IgnoredAetherytes));
 
             if (ImGui.BeginTable("aethetytes", 3, ImGuiTableFlags.RowBg | ImGuiTableFlags.Borders | ImGuiTableFlags.ScrollY, new Vector2(500f, 600f)))
             {
-                ImGui.TableSetupColumn("ID");
-                ImGui.TableSetupColumn("Name");
+            ImGui.TableSetupColumn(new(Localization.TableColumnId));
+            ImGui.TableSetupColumn(new(Localization.TableColumnName));
                 ImGui.TableSetupColumn(string.Empty);
                 ImGui.TableHeadersRow();
 
@@ -148,7 +148,7 @@ public class PluginConfigWindow : ConfigWindow<PluginConfig>
                         ImGui.TextDisabled($"{aetheryteName} ({zoneName})");
 
                         ImGui.TableNextColumn();
-                        if (ImGui.Button($"Unignore##{aetheryte.RowId}"))
+                        if (ImGui.Button($"{Localization.UnignoreButton}##{aetheryte.RowId}"))
                         {
                             Config.IgnoredAetheryteIds.Remove(aetheryte.RowId);
                         }
@@ -158,7 +158,7 @@ public class PluginConfigWindow : ConfigWindow<PluginConfig>
                         ImGui.Text($"{aetheryteName} ({zoneName})");
 
                         ImGui.TableNextColumn();
-                        if (ImGui.Button($"Ignore##{aetheryte.RowId}"))
+                        if (ImGui.Button($"{Localization.IgnoreButton}##{aetheryte.RowId}"))
                         {
                             Config.IgnoredAetheryteIds.Add(aetheryte.RowId);
                         }

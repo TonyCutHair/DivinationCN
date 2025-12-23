@@ -11,6 +11,8 @@ public sealed class LocalizedString
     public string? Ja { get; init; }
     public string? Ge { get; init; }
     public string? Fr { get; init; }
+    public string? Zh { get; init; }
+    public string? Ko { get; init; }
 
     public static implicit operator string(LocalizedString localizedString)
     {
@@ -30,7 +32,26 @@ public sealed class LocalizedString
     public override string ToString()
     {
         var api = ServiceContainer.Get<IDalamudApi>();
-        switch (api?.ClientState.ClientLanguage)
+        var language = api?.ClientState.ClientLanguage;
+        var languageName = language?.ToString();
+
+        if (languageName is "ChineseSimplified" or "ChineseTraditional" or "Chinese" or "Chinese (Simplified)" or "Chinese (Traditional)" or "zh" or "zh-CN" or "zh-TW")
+        {
+            if (!string.IsNullOrWhiteSpace(Zh))
+            {
+                return Zh;
+            }
+        }
+
+        if (languageName is "Korean" or "ko" or "ko-KR")
+        {
+            if (!string.IsNullOrWhiteSpace(Ko))
+            {
+                return Ko;
+            }
+        }
+
+        switch (language)
         {
             case ClientLanguage.Japanese when !string.IsNullOrWhiteSpace(Ja):
                 return Ja;
